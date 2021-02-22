@@ -2,8 +2,7 @@
 
 session_start();
 
-if (!isset($_SESSION['user']))
-{
+if (!isset($_SESSION['user'])) {
     header("location: ./index.php");
     session_destroy();
     exit();
@@ -36,7 +35,7 @@ require_once('../php/app/helpers.php');
         <!-- * * Tip * * You can use text or an image for your navbar brand.-->
         <!-- * * * * * * When using an image, we recommend the SVG format.-->
         <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
-        <a class="navbar-brand" href="index.html"><?php echo CONFIG['APP_NAME']; ?></a>
+        <a class="navbar-brand" href="home.php"><?php echo CONFIG['APP_NAME']; ?></a>
         <!-- Sidenav Toggle Button-->
         <button class="btn btn-icon btn-transparent-dark order-1 order-lg-0 mr-lg-2" id="sidebarToggle"><i data-feather="menu"></i></button>
         <!-- Navbar Search Input-->
@@ -51,6 +50,38 @@ require_once('../php/app/helpers.php');
         </form>
         <!-- Navbar Items-->
         <ul class="navbar-nav align-items-center ml-auto">
+            <!-- Images Dropdown-->
+            <li class="nav-item dropdown no-caret d-none d-sm-block mr-3">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="font-weight-500">Images</div>
+                    <i class="fas fa-chevron-right dropdown-arrow"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right py-0 mr-sm-n15 mr-lg-0 o-hidden animated--fade-in-up" aria-labelledby="navbarDropdownDocs">
+                    <a class="dropdown-item py-3" href="imageHome.php" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="home"></i></div>
+                        <div>
+                            <div class="small text-gray-500">Home</div>
+                            See the publications
+                        </div>
+                    </a>
+                    <div class="dropdown-divider m-0"></div>
+                    <a class="dropdown-item py-3" href="https://docs.startbootstrap.com/sb-admin-pro/components" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="camera"></i></div>
+                        <div>
+                            <div class="small text-gray-500">Image</div>
+                            Upload an image
+                        </div>
+                    </a>
+                    <div class="dropdown-divider m-0"></div>
+                    <a class="dropdown-item py-3" href="profile.php" target="_blank">
+                        <div class="icon-stack bg-primary-soft text-primary mr-4"><i data-feather="user"></i></div>
+                        <div>
+                            <div class="small text-gray-500">Profile</div>
+                            Updates and changes
+                        </div>
+                    </a>
+                </div>
+            </li>
             <!-- Documentation Dropdown-->
             <li class="nav-item dropdown no-caret d-none d-sm-block mr-3">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownDocs" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -503,7 +534,7 @@ require_once('../php/app/helpers.php');
                                             El registro de la cuenta se ha efectuado con éxito.
                                         </div>
                                     </div>
-                                    heredoc;
+heredoc;
                                 }
 
                             ?>
@@ -1612,14 +1643,9 @@ require_once('../php/app/helpers.php');
             </footer>
         </div>
     </div>
-    <!-- Return to Top -->
-    <div id="return-to-top">
-        <svg class="fas fa-chevron-circle-up"></svg>
-    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="js/scripts.js"></script>
-    <script src="js/general.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
     <script src="assets/demo/chart-area-demo.js"></script>
     <script src="assets/demo/chart-bar-demo.js"></script>
